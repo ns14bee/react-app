@@ -1,9 +1,5 @@
 import React, { createContext, useState, useContext, ReactNode } from "react";
-import {
-  setToken as saveToken,
-  removeToken as clearToken,
-  getToken,
-} from "../utils/token";
+import { setToken as saveToken, removeToken, getToken } from "../utils/token";
 import { ITokenContextType } from "./hook.types";
 
 const TokenContext = createContext<ITokenContextType | undefined>(undefined);
@@ -17,7 +13,7 @@ export const TokenProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const clearToken = () => {
-    clearToken();
+    removeToken();
     setTokenState(null);
   };
 

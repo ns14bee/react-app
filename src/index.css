@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add these styles for layout handling in your CSS file or Tailwind setup */
+.container.horizontal {
+  @apply flex flex-row justify-between items-start;
+}
+.container.vertical {
+  @apply flex flex-col items-start;
+}
+.section {
+  @apply bg-gray-800 text-white p-4 rounded-md m-2;
+}

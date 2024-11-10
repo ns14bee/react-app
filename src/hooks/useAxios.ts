@@ -1,11 +1,12 @@
 import axios from "axios";
-import { useToken } from "../hooks/useAuthContext";
+import { useToken } from "./useAuthContext";
+import { API_URL } from "../utils/enum";
 
 const useAxios = () => {
   const { token } = useToken();
 
   const axiosInstance = axios.create({
-    baseURL: "https://your-api.com",
+    baseURL: API_URL.BASE_URL,
   });
 
   axiosInstance.interceptors.request.use((config) => {
